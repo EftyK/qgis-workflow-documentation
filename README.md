@@ -47,8 +47,8 @@ QFlowCrate will help you document the **metadata** of your project, prompting to
 
 ## Features  
 
-| ✅ | Feature | |
-|---|---------|---------|
+| Functionality | Feature | 
+|---------|------------------|
 | **Provenance capture** | Data layers, processing steps, symbology. |
 | **RO‑Crate export** | Generates a standards‑compliant crate ready for FAIR sharing. All local data files are bundled in the plugin ZIP. |
 | **Selective packaging** | Choose which layers/files to include (e.g., omit large raw rasters). |

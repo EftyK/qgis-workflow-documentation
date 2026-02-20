@@ -6,8 +6,7 @@
 [![QGIS >= 3.24](https://img.shields.io/badge/QGIS-%3E%3D3.24-green)](https://qgis.org)
 [![Latest Release](https://img.shields.io/github/v/release/nicevibesplus/QFlowCrate)](https://github.com/nicevibesplus/QFlowCrate/releases/download/v0.0.7/qflowcrate-v0.0.7.zip)
 
-A QGIS plugin that retrieves the steps of a spatial analysis workflow and bundles everything into a **RO‑Crate** – a self‑describing, machine‑readable package that contains data, metadata, and provenance information. 
-> It helps with making QGIS projects reproducible, shareable, and ready for FAIR publishing.
+A QGIS plugin that retrieves the steps of a spatial analysis workflow and bundles everything into a **RO‑Crate** – a self‑describing, machine‑readable package that contains data, metadata, and provenance information. It helps with making QGIS projects reproducible, shareable, and ready for FAIR publishing.
 <br clear="right"/>
 
 ---
@@ -15,9 +14,8 @@ A QGIS plugin that retrieves the steps of a spatial analysis workflow and bundle
 ## Table of Contents  
 
 - [What is QFlowCrate?](#what-is-qflowcrate)  
-- [Features & Data‑Format Support](#features--data‑format-support)  
-- [Installation](#installation)  
-- [Quick‑Start / Usage Example](#quick‑start--usage-example)  
+- [Features](#features)  
+- [Installation and Quick start](#installation)  
 - [Development](#development)  
 - [License & Acknowledgements](#license--acknowledgements)  
 - [Contact & Support](#contact--support)   
@@ -45,7 +43,9 @@ QFlowCrate will help you document the **metadata** of your project, prompting to
 > This project is based on the work of Andreas Rademaker for his Bachelor's thesis in Geoinformatics at the University of Münster
 > (Institute for Geoinformatics), October 2025.
 
-## Features & Data‑Format Support  
+---
+
+## Features  
 
 | ✅ | Feature | |
 |---|---------|---------|
@@ -56,6 +56,7 @@ QFlowCrate will help you document the **metadata** of your project, prompting to
 | **Cross‑platform** | Works on Windows, macOS, and Linux Ubuntu(QGIS ≥ 3.40). |
 | **Data‑format support** | <br>• **Vector:** Shapefile (`.shp`), GeoJSON (`.geojson`), KML (`.kml`) <br>• **Raster:** GeoTIFF (`.tif/.tiff`), PNG (`.png`), JPEG (`.jpg`) <br>• **Other:** CSV tables, OGC-compliant server connections (WFS, WMS) . |
 
+---
 
 ## Installation
 
@@ -78,7 +79,7 @@ Go to the **Releases** page and download the ZIP file for the most recent versio
 
 ---
 
-## Quick‑Start / Usage Example  
+## Quick start  
 
 Below is a minimal, end‑to‑end example that demonstrates the typical workflow.
 

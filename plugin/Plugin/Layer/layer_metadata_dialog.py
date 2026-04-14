@@ -55,6 +55,15 @@ class LayerMetadataDialog(QDialog):
         self.setMinimumSize(650, 700)
         self.resize(650, 700)
 
+        # Instruction label
+        self.instruction_label = QLabel(self)
+        self.instruction_label.setText(
+            "Fields marked with an asterisk (*) are required."
+        )
+        self.instruction_label.setWordWrap(True)
+        self.main_layout.addWidget(self.instruction_label)
+
+
         # Main layout
         main_layout = QVBoxLayout()
         main_layout.setSpacing(15)
@@ -145,7 +154,7 @@ class LayerMetadataDialog(QDialog):
         self.description_textedit.setToolTip(
             "Provide a clear description of what this layer contains and its intended use"
         )
-        basic_info_layout.addRow("Description:", self.description_textedit)
+        basic_info_layout.addRow("Description (*): ", self.description_textedit)
 
         basic_info_group.setLayout(basic_info_layout)
         main_layout.addWidget(basic_info_group)
@@ -242,7 +251,7 @@ class LayerMetadataDialog(QDialog):
         self.source_title_lineedit.setToolTip(
             "Enter the official name or title of the data source"
         )
-        source_info_layout.addRow("Source Title:", self.source_title_lineedit)
+        source_info_layout.addRow("Source Title (*): ", self.source_title_lineedit)
 
         # Source URL
         self.source_url_lineedit = QLineEdit()
@@ -250,7 +259,7 @@ class LayerMetadataDialog(QDialog):
         self.source_url_lineedit.setToolTip(
             "Enter the URL where this data was obtained"
         )
-        source_info_layout.addRow("Source URL:", self.source_url_lineedit)
+        source_info_layout.addRow("Source URL (*): ", self.source_url_lineedit)
 
         # Source Date
         self.source_date_dateedit = QDateEdit()

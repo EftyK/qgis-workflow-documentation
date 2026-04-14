@@ -77,6 +77,7 @@ class ExportTab(QWidget):
         self.instruction_label.setText(
             "Configure your project metadata and select an "
             "export location for the RO-Crate package."
+            "Fields marked with an asterisk (*) are required."
         )
         self.instruction_label.setWordWrap(True)
         self.export_layout.addWidget(self.instruction_label)
@@ -92,7 +93,7 @@ class ExportTab(QWidget):
         self.author_layout.setContentsMargins(10, 10, 10, 10)
 
         # Author field
-        self.author_label = QLabel("Author:", self)
+        self.author_label = QLabel("Author (*):", self)
         self.author_LineEdit = QLineEdit(self)
         self.author_LineEdit.setPlaceholderText("Enter author name")
         self.author_LineEdit.setToolTip("Name of the author")
@@ -124,7 +125,7 @@ class ExportTab(QWidget):
         self.metadata_layout.setContentsMargins(10, 10, 10, 10)
 
         # License field
-        self.license_label = QLabel("License:", self)
+        self.license_label = QLabel("License (*):", self)
         self.license_ComboBox = QComboBox(self)
         self.license_ComboBox.setToolTip(
             "Select the license for your dataset (required)"
@@ -133,14 +134,14 @@ class ExportTab(QWidget):
         self.metadata_layout.addRow(self.license_label, self.license_ComboBox)
 
         # Title field
-        self.title_label = QLabel("Project Title:", self)
+        self.title_label = QLabel("Project Title (*):", self)
         self.title_LineEdit = QLineEdit(self)
         self.title_LineEdit.setPlaceholderText("Enter project title")
         self.title_LineEdit.setToolTip("Title for your QGIS project")
         self.metadata_layout.addRow(self.title_label, self.title_LineEdit)
 
         # Description field
-        self.description_label = QLabel("Description:", self)
+        self.description_label = QLabel("Description (*):", self)
         self.description_label.setAlignment(
             Qt.AlignLeading | Qt.AlignLeft | Qt.AlignTop
         )
@@ -166,7 +167,7 @@ class ExportTab(QWidget):
         self.export_path_layout = QHBoxLayout()
         self.export_path_layout.setSpacing(8)
 
-        self.export_path_label = QLabel("Export Path:", self)
+        self.export_path_label = QLabel("Export Path (*):", self)
         self.export_path_label.setMinimumSize(QSize(80, 0))
         self.export_path_layout.addWidget(self.export_path_label)
 

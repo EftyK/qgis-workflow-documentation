@@ -359,8 +359,14 @@ class LayerMetadataDialog(QDialog):
         # External source fields
         if hasattr(self.layer, "source_title") and self.layer.source_title:
             self.source_title_lineedit.setText(self.layer.source_title)
+        # Set source URL from layer.source_url if available, otherwise use data source
         if hasattr(self.layer, "source_url") and self.layer.source_url:
             self.source_url_lineedit.setText(self.layer.source_url)
+        else:
+            # Use the data source as the source URL
+            data_source = str(getattr(self.layer, "source", ""))
+            if data_source:
+                self.source_url_lineedit.setText(data_source)
         if hasattr(self.layer, "source_date") and self.layer.source_date:
             date = QDate.fromString(self.layer.source_date, "yyyy-MM-dd")
             if date.isValid():

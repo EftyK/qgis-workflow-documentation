@@ -52,8 +52,8 @@ class LayerMetadataDialog(QDialog):
     def setup_ui(self):
         """Setup the user interface components and layout."""
         self.setWindowTitle("Layer Metadata Documentation")
-        self.setMinimumSize(650, 700)
-        self.resize(650, 700)
+        self.setMinimumSize(650, 750)
+        self.resize(650, 750)
 
         # Instruction label
         self.instruction_label = QLabel(self)

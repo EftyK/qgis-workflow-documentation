@@ -282,6 +282,8 @@ class ExportTab(QWidget):
 
         # Field validation connections
         self.title_LineEdit.textChanged.connect(self.validate_form)
+        self.description_TextEdit.textChanged.connect(self.validate_form)
+        self.author_LineEdit.textChanged.connect(self.validate_form)
         self.export_path_LineEdit.textChanged.connect(self.validate_form)
         self.license_ComboBox.currentTextChanged.connect(self.validate_form)
 

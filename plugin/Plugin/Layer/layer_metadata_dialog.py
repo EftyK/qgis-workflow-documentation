@@ -52,8 +52,8 @@ class LayerMetadataDialog(QDialog):
     def setup_ui(self):
         """Setup the user interface components and layout."""
         self.setWindowTitle("Layer Metadata Documentation")
-        self.setMinimumSize(650, 750)
-        self.resize(650, 750)
+        self.setMinimumSize(650, 850)
+        self.resize(650, 850)
 
         # Instruction label
         self.instruction_label = QLabel(self)
@@ -61,7 +61,7 @@ class LayerMetadataDialog(QDialog):
             "Fields marked with an asterisk (*) are required."
         )
         self.instruction_label.setWordWrap(True)
-        self.main_layout.addWidget(self.instruction_label)
+        
 
 
         # Main layout
@@ -76,6 +76,8 @@ class LayerMetadataDialog(QDialog):
         self._create_technical_info_section(main_layout)
         self._create_external_source_section(main_layout)
         self._create_button_section(main_layout)
+
+        main_layout.addWidget(self.instruction_label)
 
         self.setLayout(main_layout)
 

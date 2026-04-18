@@ -18,6 +18,7 @@ import os
 from qflowcrate.Plugin.Export.export_tab import ExportTab
 from qflowcrate.Plugin.Graph.graph_tab import GraphTab
 from qflowcrate.Plugin.Instruction.instruction_tab import InstructionTab
+from qflowcrate.Plugin.Import.import_tab import ImportTab
 
 
 class MainDialog(QDialog):
@@ -103,11 +104,13 @@ class MainDialog(QDialog):
         self.instruction_tab = InstructionTab(parent=self)
         self.graph_tab = GraphTab(parent=self)
         self.export_tab = ExportTab(parent=self)
+        self.import_tab = ImportTab(parent=self)
 
         # Add tabs to the main tab widget
         self.tab_widget.addTab(self.instruction_tab, "Instructions")
         self.tab_widget.addTab(self.graph_tab, "Graph")
         self.tab_widget.addTab(self.export_tab, "Export")
+        self.tab_widget.addTab(self.import_tab, "Import")
 
         # Set initial tab
         self.tab_widget.setCurrentIndex(0)  # Start with Instructions tab

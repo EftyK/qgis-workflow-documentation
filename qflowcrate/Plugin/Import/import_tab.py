@@ -19,11 +19,11 @@ from qgis.PyQt.QtWidgets import (
     QWidget,
 )
 
-from ..Graph.connection_arrow import ConnectionArrow
-from ..Graph.graph_view import GraphView
-from ..Graph.layer_node import LayerNode
-from .process_node import ProcessNode
-from ..utility import get_logger
+from qflowcrate.Plugin.Graph.connection_arrow import ConnectionArrow
+from qflowcrate.Plugin.Graph.graph_view import GraphView
+from qflowcrate.Plugin.Graph.layer_node import LayerNode
+from qflowcrate.Plugin.Graph.process_node import ProcessNode
+from qflowcrate.Plugin.utility import get_logger
 
 
 class ImportedLayer:

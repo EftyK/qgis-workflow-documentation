@@ -2,8 +2,8 @@ import tempfile
 
 from qgis.core import QgsRasterFileWriter, QgsRasterPipe, QgsVectorFileWriter
 
-from ..Layer.layer import Layer
-from ..utility import get_logger, get_mimetype
+from qflowcrate.Plugin.Layer.layer import Layer
+from qflowcrate.Plugin.utility import get_logger, get_mimetype
 
 
 class MemoryLayer(Layer):

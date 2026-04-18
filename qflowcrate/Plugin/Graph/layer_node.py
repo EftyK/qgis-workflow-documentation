@@ -12,7 +12,7 @@ from qgis.PyQt.QtWidgets import (
     QMenu,
 )
 
-from ..Layer.layer_metadata_dialog import LayerMetadataDialog
+from qflowcrate.Plugin.Layer.layer_metadata_dialog import LayerMetadataDialog
 
 
 class LayerNode(QGraphicsRectItem):

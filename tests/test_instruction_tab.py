@@ -6,7 +6,7 @@ from qgis.PyQt.QtWidgets import (
     QScrollArea,
     QVBoxLayout,
 )
-from plugin.Plugin.Instruction.instruction_tab import InstructionTab
+from qflowcrate.Plugin.Instruction.instruction_tab import InstructionTab
 
 # ============================================================================
 # FIXTURES

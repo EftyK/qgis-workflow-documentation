@@ -15,9 +15,9 @@ from qgis.PyQt import QtGui
 import os
 
 # Import individual tab widgets
-from .Export.export_tab import ExportTab
-from .Graph.graph_tab import GraphTab
-from .Instruction.instruction_tab import InstructionTab
+from qflowcrate.Plugin.Export.export_tab import ExportTab
+from qflowcrate.Plugin.Graph.graph_tab import GraphTab
+from qflowcrate.Plugin.Instruction.instruction_tab import InstructionTab
 
 
 class MainDialog(QDialog):

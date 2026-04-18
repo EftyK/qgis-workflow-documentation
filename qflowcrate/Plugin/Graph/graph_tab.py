@@ -21,14 +21,14 @@ from qgis.PyQt.QtWidgets import (
     QWidget,
 )
 
-from ..Layer.layer_factory import LayerFactory
-from ..Layer.layer_metadata_dialog import LayerMetadataDialog
-from ..Process.process import Process
-from ..Process.process_metadata_dialog import ProcessMetadataDialog
-from ..utility import get_logger
-from .graph_view import GraphView
-from .layer_node import LayerNode
-from .process_node import ProcessNode
+from qflowcrate.Plugin.Layer.layer_factory import LayerFactory
+from qflowcrate.Plugin.Layer.layer_metadata_dialog import LayerMetadataDialog
+from qflowcrate.Plugin.Process.process import Process
+from qflowcrate.Plugin.Process.process_metadata_dialog import ProcessMetadataDialog
+from qflowcrate.Plugin.utility import get_logger
+from qflowcrate.Plugin.Graph.graph_view import GraphView
+from qflowcrate.Plugin.Graph.layer_node import LayerNode
+from qflowcrate.Plugin.Graph.process_node import ProcessNode
 
 
 class GraphTab(QWidget):

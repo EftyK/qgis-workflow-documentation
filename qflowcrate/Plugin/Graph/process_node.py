@@ -12,8 +12,8 @@ from qgis.PyQt.QtWidgets import (
     QMenu,
 )
 
-from ..Process.process_metadata_dialog import ProcessMetadataDialog
-from ..utility import get_logger
+from qflowcrate.Plugin.Process.process_metadata_dialog import ProcessMetadataDialog
+from qflowcrate.Plugin.utility import get_logger
 
 
 class ProcessNode(QGraphicsEllipseItem):

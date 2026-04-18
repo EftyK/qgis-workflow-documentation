@@ -24,7 +24,7 @@ jobs:
       - name: Prepare Plugin directory
         run: |
           mkdir -p release/qflowcrate
-          cp -r plugin/* release/qflowcrate/
+          cp -r qflowcrate/* release/qflowcrate/
 
       - name: Install dependencies to libs
         run: |

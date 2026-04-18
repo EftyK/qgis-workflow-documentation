@@ -39,6 +39,6 @@ def classFactory(iface):  # pylint: disable=invalid-name # noqa: N802
     if libs_path not in sys.path:
         sys.path.insert(0, libs_path)
     #
-    from .automated_workflow_documentation import AutomatedWorkflowDocumentation
+    from qflowcrate.automated_workflow_documentation import AutomatedWorkflowDocumentation
 
     return AutomatedWorkflowDocumentation(iface)

@@ -31,7 +31,7 @@ from qgis.PyQt.QtWidgets import (
 from qgis.utils import Qgis
 from rocrate.rocrate import ROCrate
 
-from ..utility import Logger, display_error_message, get_logger
+from qflowcrate.Plugin.utility import Logger, display_error_message, get_logger
 
 
 class ExportTab(QWidget):

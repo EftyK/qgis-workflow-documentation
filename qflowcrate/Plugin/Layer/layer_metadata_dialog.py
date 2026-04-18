@@ -18,7 +18,7 @@ from qgis.PyQt.QtWidgets import (
     QVBoxLayout,
 )
 
-from ..utility import display_error_message
+from qflowcrate.Plugin.utility import display_error_message
 
 
 class LayerMetadataDialog(QDialog):

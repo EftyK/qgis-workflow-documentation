@@ -12,9 +12,9 @@ from qgis.PyQt.QtWidgets import (
     QMessageBox,
 )
 
-from .connection_arrow import ConnectionArrow
-from .layer_node import LayerNode
-from .process_node import ProcessNode
+from qflowcrate.Plugin.Graph.connection_arrow import ConnectionArrow
+from qflowcrate.Plugin.Graph.layer_node import LayerNode
+from qflowcrate.Plugin.Graph.process_node import ProcessNode
 
 
 class GraphView(QGraphicsView):

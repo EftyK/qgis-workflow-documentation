@@ -1,0 +1,45 @@
+name: Build and Test Branch
+
+on:
+  push:
+    branches:
+      - '**'        # Runs on every branch
+      - '!main'     # exclude main
+  pull_request:     
+
+jobs:
+  build-artifact:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v2
+
+      - name: Set up Python
+        run: uv python install 3.12
+
+      - name: Prepare Plugin directory
+        run: |
+          mkdir -p release/qflowcrate
+          cp -r qflowcrate/* release/qflowcrate/
+
+      - name: Install dependencies to libs
+        run: |
+          mkdir -p release/qflowcrate/libs
+          uv pip install --target release/qflowcrate/libs rocrate
+
+      - name: Create ZIP
+        run: |
+          cd release
+          # Use the branch name or commit hash for the zip name
+          zip -r qflowcrate-test-build.zip qflowcrate/ -x "*/__pycache__/*"
+
+      
+      - name: Upload Artifact for Testing
+        uses: actions/upload-artifact@v4
+        with:
+          name: qflowcrate-test-build
+          path: release/qflowcrate-test-build.zip
+          retention-days: 3

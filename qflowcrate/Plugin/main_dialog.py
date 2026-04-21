@@ -8,6 +8,7 @@ from qgis.PyQt.QtWidgets import (
     QDialog,
     QDialogButtonBox,
     QTabWidget,
+    QWidget,
     QVBoxLayout,
 )
 from qgis.PyQt import QtGui
@@ -108,9 +109,27 @@ class MainDialog(QDialog):
 
         # Add tabs to the main tab widget
         self.tab_widget.addTab(self.instruction_tab, "Instructions")
+        
+        # Keep your existing setup code
+        self.tab_widget.addTab(QWidget(), "")
+        self.tab_widget.setTabEnabled(1, False)
+        
         self.tab_widget.addTab(self.graph_tab, "Graph")
         self.tab_widget.addTab(self.export_tab, "Export")
+        self.tab_widget.addTab(QWidget(), "")
+        self.tab_widget.setTabEnabled(4, False)
+        
         self.tab_widget.addTab(self.import_tab, "Import")
+        
+        # Apply this stylesheet to the tab bar to hide index 3
+        self.tab_widget.setStyleSheet("""
+            QTabBar::tab:disabled {
+                width: 10px; 
+                color: transparent; 
+                background: transparent; 
+                border: none;
+            }
+        """)
 
         # Set initial tab
         self.tab_widget.setCurrentIndex(0)  # Start with Instructions tab

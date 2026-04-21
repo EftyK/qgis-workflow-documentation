@@ -3,7 +3,7 @@
 Instrument - Represents a QGIS processing algorithm as a software instrument
 """
 
-from ..utility import get_logger
+from qflowcrate.Plugin.utility import get_logger
 
 
 class Instrument:

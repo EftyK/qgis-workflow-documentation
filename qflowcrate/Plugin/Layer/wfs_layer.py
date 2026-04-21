@@ -1,8 +1,8 @@
 import re
 from urllib.parse import urlencode
 
-from ..Layer.layer import Layer
-from ..utility import get_logger, get_mimetype
+from qflowcrate.Plugin.Layer.layer import Layer
+from qflowcrate.Plugin.utility import get_logger, get_mimetype
 
 
 class WFSLayer(Layer):

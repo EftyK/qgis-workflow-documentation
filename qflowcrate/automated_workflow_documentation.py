@@ -32,7 +32,7 @@ from qgis.PyQt.QtGui import QIcon
 from qgis.PyQt.QtWidgets import QAction, QMessageBox
     
 # Import the code for the dialog
-from .Plugin.main_dialog import MainDialog
+from qflowcrate.Plugin.main_dialog import MainDialog
 
 
 class AutomatedWorkflowDocumentation:

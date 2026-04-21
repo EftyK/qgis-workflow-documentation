@@ -11,7 +11,7 @@ from qgis.PyQt.QtWidgets import (
     QVBoxLayout,
 )
 
-from plugin.Plugin.Export.export_tab import ExportTab
+from qflowcrate.Plugin.Export.export_tab import ExportTab
 
 # ============================================================================
 # FIXTURES

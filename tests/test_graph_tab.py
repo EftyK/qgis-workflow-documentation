@@ -8,7 +8,7 @@ from qgis.PyQt.QtWidgets import (
     QVBoxLayout
 )
 
-from plugin.Plugin.Graph.graph_tab import GraphTab
+from qflowcrate.Plugin.Graph.graph_tab import GraphTab
 
 # ==========================================================================
 # FIXTURES

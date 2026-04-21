@@ -11,4 +11,4 @@ __pycache__/
 .vscode/
 .idea/
 
-plugin/libs/
+qflowcrate/libs/

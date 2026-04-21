@@ -1,15 +1,14 @@
-name: Create Release
+name: Build and Test Branch
 
 on:
   push:
-    tags:
-      - "v*"
-
-permissions:
-  contents: write
+    branches:
+      - '**'        # Runs on every branch
+      - '!main'     # exclude main
+  pull_request:     
 
 jobs:
-  release:
+  build-artifact:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -34,13 +33,13 @@ jobs:
       - name: Create ZIP
         run: |
           cd release
-          zip -r qflowcrate-${{ github.ref_name }}.zip \
-            qflowcrate/
+          # Use the branch name or commit hash for the zip name
+          zip -r qflowcrate-test-build.zip qflowcrate/ -x "*/__pycache__/*"
 
-      - name: Create GitHub Release
-        uses: softprops/action-gh-release@v1
+      
+      - name: Upload Artifact for Testing
+        uses: actions/upload-artifact@v4
         with:
-          files: release/qflowcrate-${{ github.ref_name }}.zip
-          generate_release_notes: true
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          name: qflowcrate-test-build
+          path: release/qflowcrate-test-build.zip
+          retention-days: 3

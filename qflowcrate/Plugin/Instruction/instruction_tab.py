@@ -89,6 +89,12 @@ class InstructionTab(QWidget):
             "also create a log file in the same directory. After you have done that, "
             "hit Export RO-Crate.",
         )
+        self._add_section(
+            main_layout,
+            "Import Tab - Importing an Existing RO-Crate",
+            "This tab allows you to import an existing RO-Crate. This can be used to "
+            "recreate the workflow graph from a previously exported RO-Crate.",
+        )
 
         main_layout.addWidget(scroll_area)
         self.setLayout(main_layout)

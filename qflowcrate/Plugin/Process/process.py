@@ -5,8 +5,8 @@ Process - Represents a QGIS processing step with metadata and RO-Crate export
 
 import re
 
-from ..utility import get_logger
-from .instrument import Instrument
+from qflowcrate.Plugin.utility import get_logger
+from qflowcrate.Plugin.Process.instrument import Instrument
 
 
 class Process:

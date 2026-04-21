@@ -6,7 +6,7 @@ from pathlib import Path
 
 from qgis.core import QgsMapLayer, QgsMapLayerType, QgsProject, QgsWkbTypes
 
-from ..utility import get_logger, get_mimetype
+from qflowcrate.Plugin.utility import get_logger, get_mimetype
 
 
 class Layer:

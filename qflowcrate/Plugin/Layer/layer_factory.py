@@ -1,9 +1,9 @@
-from .gpkg_layer import GPKGLayer
-from .layer import Layer
-from .memory_layer import MemoryLayer
-from .shp_layer import SHPLayer
-from .wfs_layer import WFSLayer
-from .wms_layer import WMSLayer
+from qflowcrate.Plugin.Layer.gpkg_layer import GPKGLayer
+from qflowcrate.Plugin.Layer.layer import Layer
+from qflowcrate.Plugin.Layer.memory_layer import MemoryLayer
+from qflowcrate.Plugin.Layer.shp_layer import SHPLayer
+from qflowcrate.Plugin.Layer.wfs_layer import WFSLayer
+from qflowcrate.Plugin.Layer.wms_layer import WMSLayer
 
 
 class LayerFactory:

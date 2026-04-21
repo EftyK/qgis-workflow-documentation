@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - '**'        # Runs on every branch
-      - '!main'     # exclude main
   pull_request:     
 
 jobs:

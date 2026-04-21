@@ -52,8 +52,17 @@ class LayerMetadataDialog(QDialog):
     def setup_ui(self):
         """Setup the user interface components and layout."""
         self.setWindowTitle("Layer Metadata Documentation")
-        self.setMinimumSize(650, 700)
-        self.resize(650, 700)
+        self.setMinimumSize(650, 850)
+        self.resize(650, 850)
+
+        # Instruction label
+        self.instruction_label = QLabel(self)
+        self.instruction_label.setText(
+            "Fields marked with an asterisk (*) are required."
+        )
+        self.instruction_label.setWordWrap(True)
+        
+
 
         # Main layout
         main_layout = QVBoxLayout()
@@ -67,6 +76,8 @@ class LayerMetadataDialog(QDialog):
         self._create_technical_info_section(main_layout)
         self._create_external_source_section(main_layout)
         self._create_button_section(main_layout)
+
+        main_layout.addWidget(self.instruction_label)
 
         self.setLayout(main_layout)
 
@@ -145,7 +156,7 @@ class LayerMetadataDialog(QDialog):
         self.description_textedit.setToolTip(
             "Provide a clear description of what this layer contains and its intended use"
         )
-        basic_info_layout.addRow("Description:", self.description_textedit)
+        basic_info_layout.addRow("Description (*): ", self.description_textedit)
 
         basic_info_group.setLayout(basic_info_layout)
         main_layout.addWidget(basic_info_group)
@@ -242,7 +253,7 @@ class LayerMetadataDialog(QDialog):
         self.source_title_lineedit.setToolTip(
             "Enter the official name or title of the data source"
         )
-        source_info_layout.addRow("Source Title:", self.source_title_lineedit)
+        source_info_layout.addRow("Source Title (*): ", self.source_title_lineedit)
 
         # Source URL
         self.source_url_lineedit = QLineEdit()
@@ -250,7 +261,7 @@ class LayerMetadataDialog(QDialog):
         self.source_url_lineedit.setToolTip(
             "Enter the URL where this data was obtained"
         )
-        source_info_layout.addRow("Source URL:", self.source_url_lineedit)
+        source_info_layout.addRow("Source URL (*): ", self.source_url_lineedit)
 
         # Source Date
         self.source_date_dateedit = QDateEdit()
@@ -350,8 +361,14 @@ class LayerMetadataDialog(QDialog):
         # External source fields
         if hasattr(self.layer, "source_title") and self.layer.source_title:
             self.source_title_lineedit.setText(self.layer.source_title)
+        # Set source URL from layer.source_url if available, otherwise use data source
         if hasattr(self.layer, "source_url") and self.layer.source_url:
             self.source_url_lineedit.setText(self.layer.source_url)
+        else:
+            # Use the data source as the source URL
+            data_source = str(getattr(self.layer, "source", ""))
+            if data_source:
+                self.source_url_lineedit.setText(data_source)
         if hasattr(self.layer, "source_date") and self.layer.source_date:
             date = QDate.fromString(self.layer.source_date, "yyyy-MM-dd")
             if date.isValid():

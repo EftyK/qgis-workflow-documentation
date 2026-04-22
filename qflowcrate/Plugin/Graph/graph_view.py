@@ -222,7 +222,11 @@ class GraphView(QGraphicsView):
         """
         self.connection_mode = enabled
         if not enabled and self.connection_start:
-            self.connection_start.setBrush(
-                self._get_original_brush(self.connection_start)
-            )
+            try:
+                self.connection_start.setBrush(
+                    self._get_original_brush(self.connection_start)
+                )
+            except RuntimeError:
+                # Object has been deleted
+                pass
             self.connection_start = None

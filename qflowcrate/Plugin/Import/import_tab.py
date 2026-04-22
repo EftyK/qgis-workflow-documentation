@@ -158,7 +158,8 @@ class ImportTab(QWidget):
 
         instruction_label = QLabel(
             "Select an exported RO-Crate (.zip) file to visualize its workflow graph. "
-            "This view is read-only. Right-click any node to inspect its metadata."
+            "This view is read-only. Right-click any node to inspect its metadata. "
+            "To zoom in and out of the graph, use the keyboard shortcuts Ctrl & '+' / Ctrl & '-', respectively."
         )
         instruction_label.setWordWrap(True)
         main_layout.addWidget(instruction_label)

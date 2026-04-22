@@ -74,7 +74,9 @@ class InstructionTab(QWidget):
             "ask for a title and description.",
             "Step 3: Add connections between the graphs layers and processing steps. "
             "This creates a complete workflow diagram. Without this, the dependencies "
-            "of the layers will be missing in the final export.",
+            "of the layers will be missing in the final export. "
+            "The user can zoom in and out of the graph using the keyboard shortcuts "
+            "Ctrl & '+' / Ctrl & '-', respectively.",
         )
         self._add_section(
             main_layout,

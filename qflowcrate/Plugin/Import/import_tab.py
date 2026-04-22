@@ -298,7 +298,7 @@ class ImportTab(QWidget):
                 target_node = self.nodes_map.get(target_id)
                 
                 if source_node and target_node:
-                    arrow = ConnectionArrow(source_node, target_node)
+                    arrow = ConnectionArrow(source_node, target_node, deletable=False)
                     self.graph_view.scene.addItem(arrow)
 
             # 6. Apply auto-layout

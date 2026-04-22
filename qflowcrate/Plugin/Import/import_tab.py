@@ -408,3 +408,10 @@ class ImportTab(QWidget):
             elif isinstance(node, ProcessNode):
                 for arrow in node.input_arrows + node.output_arrows:
                     arrow.update_position()
+
+        # Update scene rect to encompass all items
+        scene_rect = self.graph_view.scene.itemsBoundingRect()
+        self.graph_view.scene.setSceneRect(scene_rect)
+
+        # Fit the view to show all items within the visible area
+        self.graph_view.fitInView(scene_rect, Qt.KeepAspectRatio)
